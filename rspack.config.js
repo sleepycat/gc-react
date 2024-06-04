@@ -19,6 +19,11 @@ module.exports = {
         type: 'asset',
       },
       {
+        test: /\.css$/,
+        use: ['postcss-loader'],
+        type: 'css',
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [

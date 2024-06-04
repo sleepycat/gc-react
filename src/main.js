@@ -19,17 +19,20 @@ i18n.activate('en')
 
 const font = new FontFaceObserver('Overused Grotesk')
 
-font.load().then(function() {
-  console.log('Overused Grotesk has loaded.');
-  const container = document.getElementById('root')
-  const root = createRoot(container)
-  root.render(
-    <React.StrictMode>
-      <I18nProvider i18n={i18n}>
-        <App />
-      </I18nProvider>
-    </React.StrictMode>,
-  )
-}).catch(function() {
-  console.log('Overused Grotesk failed to load.');
-});
+font
+  .load()
+  .then(function () {
+    console.log('Overused Grotesk has loaded.')
+    const container = document.getElementById('react-root')
+    const root = createRoot(container)
+    root.render(
+      <React.StrictMode>
+        <I18nProvider i18n={i18n}>
+          <App />
+        </I18nProvider>
+      </React.StrictMode>,
+    )
+  })
+  .catch(function () {
+    console.log('Overused Grotesk failed to load.')
+  })

@@ -1,6 +1,15 @@
 import React from 'react'
 import { useLingui } from '@lingui/react'
 import Locale from './locales'
+import { css } from '../styled-system/css'
+
+const className = css`
+  padding: 1em 2em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: underline;
+`
 
 function LocaleSwitcher() {
   const { i18n } = useLingui()
@@ -11,13 +20,19 @@ function LocaleSwitcher() {
 
   if (i18n.locale === Locale.ENGLISH) {
     return (
-      <button onClick={() => handleLocaleChange(Locale.FRENCH)}>
+      <button
+        className={className}
+        onClick={() => handleLocaleChange(Locale.FRENCH)}
+      >
         Français
       </button>
     )
   } else if (i18n.locale === Locale.FRENCH) {
     return (
-      <button onClick={() => handleLocaleChange(Locale.ENGLISH)}>
+      <button
+        className={className}
+        onClick={() => handleLocaleChange(Locale.ENGLISH)}
+      >
         English
       </button>
     )
