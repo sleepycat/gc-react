@@ -7,12 +7,20 @@ import { useLingui } from '@lingui/react'
 import { css } from '../styled-system/css'
 
 const headerClass = css`
+  padding: 1em;
   display: flex;
   justify-content: space-between;
 `
+const mainClass = css`
+  width: 80%;
+  margin: auto auto;
+  flex: 1 0 auto;
+`
+
 const footerClass = css`
   padding-top: 1em;
   display: flex;
+  flex-shrink: 0;
   justify-content: flex-end;
 `
 
@@ -35,7 +43,7 @@ export default function App() {
         </Signature>
         <LocaleSwitcher />
       </header>
-      <main>
+      <main className={mainClass}>
         <Trans>Some test content.</Trans>
       </main>
       <hr />
