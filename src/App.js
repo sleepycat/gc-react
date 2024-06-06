@@ -18,7 +18,7 @@ const mainClass = css`
 `
 
 const footerClass = css`
-  padding-top: 1em;
+  padding: 1em;
   display: flex;
   flex-shrink: 0;
   justify-content: flex-end;
