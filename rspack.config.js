@@ -6,7 +6,7 @@ const rspack = require('@rspack/core')
 module.exports = {
   context: __dirname,
   entry: {
-    main: './src/main.js',
+    main: './src/index.js',
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.jsx'],
