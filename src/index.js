@@ -21,7 +21,7 @@ const font = new FontFaceObserver('Overused Grotesk')
 
 font
   .load()
-  .then(function() {
+  .then(function () {
     console.log('Overused Grotesk has loaded.')
     const container = document.getElementById('react-root')
     const root = createRoot(container)
@@ -33,6 +33,6 @@ font
       </React.StrictMode>,
     )
   })
-  .catch(function() {
+  .catch(function () {
     console.log('Overused Grotesk failed to load.')
   })

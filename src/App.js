@@ -48,7 +48,7 @@ export default function App() {
       </main>
       <hr />
       <footer className={footerClass}>
-        <Wordmark width='10em' />
+        <Wordmark width="10em" />
       </footer>
     </>
   )
