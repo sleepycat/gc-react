@@ -1,4 +1,4 @@
-import { expect, it, describe } from 'vitest'
+import { describe, it, expect } from '@jest/globals'
 import { within, render, screen } from '@testing-library/react'
 import { PhacSignature } from '../PhacSignature.js'
 
@@ -9,7 +9,6 @@ describe('<PhacSignature />', () => {
       const image = await screen.findByRole('img')
       expect(image).toBeTruthy()
     })
-
     it('contains an alt-text aria-label whose text defaults to English', async () => {
       render(<PhacSignature language="en" />)
       const image = await screen.findByRole('img')
