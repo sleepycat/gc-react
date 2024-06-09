@@ -1,5 +1,5 @@
 import LocaleSwitcher from './LocaleSwitcher.js'
-import {  Trans, t } from '@lingui/macro'
+import { Trans, t } from '@lingui/macro'
 import { Wordmark } from './Wordmark.js'
 import { Signature } from './Signature.js'
 import { useLingui } from '@lingui/react'

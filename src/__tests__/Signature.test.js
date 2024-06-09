@@ -4,9 +4,7 @@ import { Signature } from '../Signature'
 
 describe('<Signature>', () => {
   it('renders an svg image', async () => {
-    render(<Signature ariaLabel='Canadian flag'>
-    test
-    </Signature>)
+    render(<Signature ariaLabel="Canadian flag">test</Signature>)
     const image = await screen.findByRole('img')
     expect(image).toBeTruthy()
   })
