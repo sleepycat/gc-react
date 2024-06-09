@@ -11,7 +11,7 @@
     "compile": "lingui compile",
     "test": "jest",
     "prepare": "panda codegen --clean",
-    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css,json}'"
+    "format": "biome format --write ./*"
   },
   "dependencies": {
     "@lingui/react": "^4.11.1",
