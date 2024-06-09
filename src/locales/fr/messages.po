@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/App.js:37
+msgid "Canadian Flag"
+msgstr "Le drapeau canadien"
+
 #: src/App.js:38
 msgid "Public Health<0/>Agency of Canada"
 msgstr "Agence de la santé<0/>publique du Canada"
