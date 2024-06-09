@@ -7,7 +7,7 @@
     "dev:rspack": "rspack serve",
     "dev:css": "panda --watch",
     "build": "rspack build",
-    "extract": "lingui extract",
+    "extract": "lingui extract --clean",
     "compile": "lingui compile",
     "test": "jest",
     "prepare": "panda codegen --clean",
