@@ -1,5 +1,5 @@
 import LocaleSwitcher from './LocaleSwitcher.js'
-import { Plural, Trans } from '@lingui/macro'
+import {  Trans, t } from '@lingui/macro'
 import { Wordmark } from './Wordmark.js'
 import { Signature } from './Signature.js'
 import { useLingui } from '@lingui/react'
@@ -34,7 +34,7 @@ export default function App() {
          "The main role is a non-obtrusive alternative for "skip to main content" links"
          https://www.w3.org/TR/wai-aria/#main
         */}
-        <Signature>
+        <Signature ariaLabel={t`Canadian Flag`}>
           <Trans>
             Public Health
             <br />
