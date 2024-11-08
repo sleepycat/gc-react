@@ -22,6 +22,7 @@ const footerClass = css`
   display: flex;
   flex-shrink: 0;
   justify-content: flex-end;
+  background-color: #f1f2f3;
 `
 
 export default function App() {
