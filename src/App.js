@@ -48,7 +48,10 @@ export default function App() {
         <Trans>Some test content.</Trans>
       </main>
       <footer className={footerClass}>
-        <Wordmark width="10em" />
+        <Wordmark
+          ariaLabel={t`Symbol of the Government of Canada`}
+          width="10em"
+        />
       </footer>
     </>
   )

@@ -4,21 +4,19 @@ import { Wordmark } from '../Wordmark.js'
 
 describe('<Wordmark />', () => {
   it('renders an image', async () => {
-    render(<Wordmark />)
+    render(<Wordmark ariaLabel="foo" />)
     const image = await screen.findByRole('img')
     expect(image).toBeTruthy()
   })
 
-  it('contains an alt-text aria-label', async () => {
-    render(<Wordmark />)
+  it('requires an aria-label', async () => {
+    render(<Wordmark ariaLabel="foo" />)
     const image = await screen.findByRole('img')
-    expect(image.getAttribute('aria-label')).toEqual(
-      'Canada Logo with Canadian flag - Logo du Canada avec Drapeau Canadien',
-    )
+    expect(image.getAttribute('aria-label')).toEqual('foo')
   })
 
   it('has preserve aspect ratio set', async () => {
-    render(<Wordmark />)
+    render(<Wordmark ariaLabel="" />)
     const image = await screen.findByRole('img')
     expect(image.getAttribute('preserveAspectRatio')).toEqual('xMinYMin meet')
   })
@@ -26,12 +24,12 @@ describe('<Wordmark />', () => {
   // Width test section
 
   it('accepts a width prop', async () => {
-    render(<Wordmark width={'10em'} />)
+    render(<Wordmark width={'10em'} ariaLabel="" />)
     const image = await screen.findByRole('img')
     expect(image.getAttribute('width')).toEqual('10em')
   })
   it('defaults to width of 20%', async () => {
-    render(<Wordmark />)
+    render(<Wordmark ariaLabel="" />)
     const image = await screen.findByRole('img')
     expect(image.getAttribute('width')).toEqual('20%')
   })
@@ -43,7 +41,7 @@ describe('<Wordmark />', () => {
   it.each(['black', 'white'])(
     'textColor sets the text color: %n',
     async (desiredTextColor) => {
-      render(<Wordmark textColor={desiredTextColor} />)
+      render(<Wordmark textColor={desiredTextColor} ariaLabel="" />)
 
       const image = await screen.findByRole('img')
 
@@ -59,7 +57,13 @@ describe('<Wordmark />', () => {
   it.each(['black', 'white'])(
     'monochrome variant renders flag same color as text: %n',
     async (desiredTextColor) => {
-      render(<Wordmark textColor={desiredTextColor} variant="monochrome" />)
+      render(
+        <Wordmark
+          textColor={desiredTextColor}
+          variant="monochrome"
+          ariaLabel=""
+        />,
+      )
 
       const image = await screen.findByRole('img')
 
@@ -74,7 +78,9 @@ describe('<Wordmark />', () => {
   it.each(['black', 'white'])(
     'color variant always renders flag as red: %n',
     async (desiredTextColor) => {
-      render(<Wordmark textColor={desiredTextColor} variant="color" />)
+      render(
+        <Wordmark textColor={desiredTextColor} variant="color" ariaLabel="" />,
+      )
 
       const image = await screen.findByRole('img')
 

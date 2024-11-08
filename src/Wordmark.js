@@ -1,9 +1,11 @@
+import { string } from 'prop-types'
+
 export const Wordmark = ({
   // Note: rbg values come from: canada.ca/en/treasury-board-secretariat/services/government-communications/design-standard/colour-design-standard-fip.html#toc1
   textColor = 'black',
-  variant = 'color',
+  variant = 'color', // TODO: if monochrome, flag and text should be the same color.
   width = '20%',
-  maxWidth = '200px',
+  ariaLabel,
 }) => {
   const canadaRed = '#EA2D37'
   const flagColor = variant === 'color' ? canadaRed : textColor
@@ -15,7 +17,7 @@ export const Wordmark = ({
       viewBox="0 0 143 34"
       preserveAspectRatio="xMinYMin meet"
       role="img"
-      aria-label="Canada Logo with Canadian flag - Logo du Canada avec Drapeau Canadien"
+      aria-label={ariaLabel}
     >
       <g transform="translate(-1, -1)">
         <path
@@ -31,4 +33,11 @@ export const Wordmark = ({
       </g>
     </svg>
   )
+}
+
+Wordmark.propTypes = {
+  ariaLabel: string.isRequired,
+  variant: string,
+  width: string,
+  textColor: string,
 }
