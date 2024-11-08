@@ -47,7 +47,6 @@ export default function App() {
       <main className={mainClass}>
         <Trans>Some test content.</Trans>
       </main>
-      <hr />
       <footer className={footerClass}>
         <Wordmark width="10em" />
       </footer>
