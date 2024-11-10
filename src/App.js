@@ -1,6 +1,6 @@
 import LocaleSwitcher from './LocaleSwitcher.js'
 import { Trans, t } from '@lingui/macro'
-import { Wordmark } from './Wordmark.js'
+import Wordmark from './Wordmark.js'
 import { Signature } from './Signature.js'
 import { useLingui } from '@lingui/react'
 
@@ -18,7 +18,7 @@ const mainClass = css`
 `
 
 const footerClass = css`
-  padding: 1em;
+  padding: 2em;
   display: flex;
   flex-shrink: 0;
   justify-content: flex-end;
@@ -48,10 +48,14 @@ export default function App() {
         <Trans>Some test content.</Trans>
       </main>
       <footer className={footerClass}>
-        <Wordmark
-          ariaLabel={t`Symbol of the Government of Canada`}
+        <Wordmark.SVG
+          aria-label={t`Symbol of the Government of Canada`}
+          role="img"
           width="10em"
-        />
+        >
+          <Wordmark.Flag className={css`fill: #EA2D37;`} />
+          <Wordmark.Text />
+        </Wordmark.SVG>
       </footer>
     </>
   )
